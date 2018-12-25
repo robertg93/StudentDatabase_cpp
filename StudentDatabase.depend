@@ -2,3 +2,8 @@
 1545643474 source:/home/robert/c++/StudentDatabase/main.cpp
 	<iostream>
 
+1545744825 source:/home/robert/c++/StudentDatabase/src/Student.cpp
+	"Student.h"
+
+1545745439 /home/robert/c++/StudentDatabase/include/Student.h
+
