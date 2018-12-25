@@ -14,17 +14,18 @@ private:
     string firstName;
     string lastName;
     int gradeYear;
-    int studentID;
+    string studentID;
     string courses;
     int tuitionBalance;
     int costOfCourse = 600;
+    static int id;
 
     public:
         //coonstructor prompt user to enter name and year
         Student();
 
         // generate ID
-
+        void setStudentID();
         //enroll coureses
 
         //view balance

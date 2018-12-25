@@ -5,7 +5,9 @@ using namespace std;
 
 int main()
 {
-    Student st1;
-    //cout << "Student database" << endl;
+    Student *ptr = new Student();
+
+     Student *ptr1 = new Student();
+
     return 0;
 }
