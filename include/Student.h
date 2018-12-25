@@ -1,6 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -12,7 +13,7 @@ class Student
 private:
     string firstName;
     string lastName;
-    string gradeYear;
+    int gradeYear;
     int studentID;
     string courses;
     int tuitionBalance;
