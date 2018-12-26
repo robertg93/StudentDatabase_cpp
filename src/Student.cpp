@@ -15,8 +15,7 @@ Student::Student()
     setStudentID();
 
     cout << firstName << " " << lastName << " " << gradeYear << " " << studentID << endl;
-    //int numberOfStudent;
-    //cin >> numberOfStudent;
+
     id++;
 }
 
@@ -27,8 +26,20 @@ void Student::setStudentID()
 
 void Student::enroll()
 {
-    cout<< " Enter course to enroll(0 to quit" << endl;
+    cout<< " Enter course to enroll(Q to quit" << endl;
+    string quit;
+    cin >> quit;
+        if (quit != "Q" )
+            {
 
+                cout << quit << endl;
+
+            }
+        else
+            {
+                cout << "You quit";
+
+            }
 }
 
 Student::~Student()
