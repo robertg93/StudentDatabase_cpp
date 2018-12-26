@@ -14,7 +14,11 @@ Student::Student()
     cin >> this->gradeYear;
     setStudentID();
 
-    cout << firstName << " " << lastName << " " << gradeYear << " " << studentID << endl;
+    cout << "Student first name: " << firstName << endl;
+    cout << "Student last name:  " << lastName << endl;
+    cout << "Student grade year: " << gradeYear << endl;
+    cout << "Student ID:         " << studentID << endl;
+
 
     id++;
 }
@@ -26,20 +30,27 @@ void Student::setStudentID()
 
 void Student::enroll()
 {
-    cout<< " Enter course to enroll(Q to quit" << endl;
-    string quit;
-    cin >> quit;
-        if (quit != "Q" )
-            {
+    string quit = "null";
+    while (quit != "Q" )
+    {
+        cout<< " Enter course to enroll(Q to quit) " << endl;
+        cin >> quit;
 
-                cout << quit << endl;
+        if (quit != "Q")
+            {
+                courses = courses + " " + quit;
+                cout << courses << endl;
 
             }
-        else
-            {
+
+    }
+
+
+
+
+
                 cout << "You quit";
 
-            }
 }
 
 Student::~Student()
