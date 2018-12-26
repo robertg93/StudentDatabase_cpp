@@ -25,7 +25,13 @@ void Student::setStudentID()
     studentID = to_string(gradeYear) + to_string(id);
 }
 
+void Student::enroll()
+{
+    cout<< " Enter course to enroll(0 to quit" << endl;
+
+}
+
 Student::~Student()
 {
-    //dtor
+    id--;
 }

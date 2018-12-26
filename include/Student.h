@@ -27,7 +27,7 @@ private:
         // generate ID
         void setStudentID();
         //enroll coureses
-
+        void enroll();
         //view balance
 
         //pay tutition

@@ -9,5 +9,7 @@ int main()
 
      Student *ptr1 = new Student();
 
+     ptr1->enroll();
+
     return 0;
 }
