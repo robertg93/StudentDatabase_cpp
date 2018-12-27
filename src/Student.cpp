@@ -47,12 +47,15 @@ void Student::enroll()
     }
 
     cout<< " Enrolled in : \n"<< courses << endl;
-    cout<< " titution balance "  << tuitionBalance << endl;
-
-
-
-
+    //cout<< " titution balance "  << tuitionBalance << endl;
 }
+
+void Student::viewBalance()
+{
+    cout << "Your balance is: " << tuitionBalance << "$" << endl;
+}
+
+
 
 Student::~Student()
 {

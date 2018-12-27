@@ -29,7 +29,7 @@ private:
         //enroll coureses
         void enroll();
         //view balance
-
+        void viewBalance();
         //pay tutition
 
         //show status
