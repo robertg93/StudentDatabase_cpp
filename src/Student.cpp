@@ -38,18 +38,19 @@ void Student::enroll()
 
         if (quit != "Q")
             {
-                courses = courses + " " + quit;
-                cout << courses << endl;
+                courses = courses  + quit + "\n" ;
+                tuitionBalance += 600;
+                //cout << courses << endl;
 
             }
 
     }
 
+    cout<< " Enrolled in : \n"<< courses << endl;
+    cout<< " titution balance "  << tuitionBalance << endl;
 
 
 
-
-                cout << "You quit";
 
 }
 
