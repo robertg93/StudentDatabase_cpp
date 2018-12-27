@@ -10,7 +10,7 @@ int main()
      Student *ptr1 = new Student();
 
      ptr1->enroll();
-     ptr1->viewBalance();
+     ptr1->payTuition(1000);
 
     return 0;
 }

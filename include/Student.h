@@ -31,7 +31,7 @@ private:
         //view balance
         void viewBalance();
         //pay tutition
-
+        void payTuition(int payment);
         //show status
 
 

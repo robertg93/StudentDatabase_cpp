@@ -55,6 +55,13 @@ void Student::viewBalance()
     cout << "Your balance is: " << tuitionBalance << "$" << endl;
 }
 
+void Student::payTuition(int payment)
+{
+    tuitionBalance = tuitionBalance - payment;
+     cout << "Thank you for your payment  " << payment;
+     viewBalance();
+
+}
 
 
 Student::~Student()
