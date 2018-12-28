@@ -63,6 +63,11 @@ void Student::payTuition(int payment)
 
 }
 
+void Student::showInfo()
+{
+    cout << "Name: " << firstName << " " << lastName << endl;
+}
+
 
 Student::~Student()
 {

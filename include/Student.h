@@ -33,7 +33,7 @@ private:
         //pay tutition
         void payTuition(int payment);
         //show status
-
+        void showInfo();
 
         virtual ~Student();
 
