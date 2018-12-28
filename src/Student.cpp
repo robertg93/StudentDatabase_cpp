@@ -66,6 +66,7 @@ void Student::payTuition(int payment)
 void Student::showInfo()
 {
     cout << "Name: " << firstName << " " << lastName << endl;
+    cout << "Courses endrolled" << courses << endl;
 }
 
 
