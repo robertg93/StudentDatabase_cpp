@@ -67,6 +67,7 @@ void Student::showInfo()
 {
     cout << "Name: " << firstName << " " << lastName << endl;
     cout << "Courses endrolled" << courses << endl;
+    cout << "Your balance: " << tuitionBalance << endl;
 }
 
 
