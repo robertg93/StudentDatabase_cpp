@@ -11,6 +11,7 @@ int main()
 
      ptr1->enroll();
      ptr1->payTuition(1000);
+     ptr1->showInfo();
 
     return 0;
 }
