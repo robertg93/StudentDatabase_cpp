@@ -13,5 +13,15 @@ int main()
      ptr1->payTuition(1000);
      ptr1->showInfo();
 
+     //ask how many students
+     cout << "enter number of students";
+     int num;
+     cin >> num;
+
+
+     //create array of student object
+
+     Student *tab = new Student[num];
+
     return 0;
 }
