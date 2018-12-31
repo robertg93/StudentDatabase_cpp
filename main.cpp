@@ -12,6 +12,7 @@ int main()
      ptr1->enroll();
      ptr1->payTuition(1000);
      ptr1->showInfo();
+     ptr1->payTuition(200);
 
      //ask how many students
      cout << "enter number of students";
@@ -21,7 +22,7 @@ int main()
 
      //create array of student object
 
-     Student *tab = new Student[num];
+     Student *tab = new Student[num ];
 
     return 0;
 }
