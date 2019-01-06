@@ -3,11 +3,12 @@
 
 using namespace std;
 vector<Student> vec;
+void loadUserToVec();
 
 int main()
 {
     int option;
-    //Student *ptr = new Student();
+
         do
         {
         cout << "\033[2J\033[1;1H";
@@ -34,24 +35,21 @@ int main()
     while(option != 0);
 
     return 0;
-    /*
-     Student *ptr1 = new Student();
 
-     ptr1->enroll();
-     ptr1->payTuition(1000);
-     ptr1->showInfo();
-     ptr1->payTuition(200);
+}
 
-     //ask how many students
-     cout << "enter number of students";
-     int num;
-     cin >> num;
+void loadUserToVec()
+{
+    ifstream in("savedUsers");
+    int temp = vec.size();
+    for ( int i = 0; i<temp ; i++)
+    {
+        Student e1;
+        in >> e1;
+        vec.push_back(e1);
+    }
+
+    in.close();
 
 
-     //create array of student object
-
-     Student *tab = new Student[num ];
-
-    return 0;
-    */
 }

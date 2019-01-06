@@ -70,8 +70,20 @@ void Student::showInfo()
     cout << "Your balance: " << tuitionBalance << endl;
 }
 
+static int getID()
+{
+    return Student::id;
+}
 
 Student::~Student()
 {
     id--;
+}
+
+
+istream& operator>>(istream& is, Student& en)
+{
+    is >> en.firstName;
+    is >> en.lastName;
+    return is;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -19,12 +20,13 @@ private:
     string courses;
     int tuitionBalance;
     int costOfCourse = 600;
-    static int id;
+
+    friend istream& operator>>(istream& is, Student& en);
 
     public:
         //coonstructor prompt user to enter name and year
         Student();
-
+        static int id;
         // generate ID
         void setStudentID();
         //enroll coureses
@@ -36,11 +38,15 @@ private:
         //show status
         void showInfo();
 
+        int static getID();
+
         virtual ~Student();
 
     protected:
 
     private:
 };
+
+istream& operator>>(istream& is, Student& en);
 
 #endif // STUDENT_H
