@@ -1,11 +1,14 @@
 #include "Student.h"
 
+
+int Student::numberOfStudent=0;
 int  Student::id = 1000;
-Student::Student()
+Student::Student(){}
+Student::Student(string name)
 {
 
-    cout << "Enter student first name: " << endl;
-    cin >> this->firstName;
+
+    this->firstName=name;
 
     cout << "Enter student last name: " << endl;
     cin >> this->lastName;
@@ -19,7 +22,7 @@ Student::Student()
     cout << "Student grade year: " << gradeYear << endl;
     cout << "Student ID:         " << studentID << endl;
 
-
+    numberOfStudent++;
     id++;
 }
 
@@ -62,6 +65,20 @@ void Student::payTuition(int payment)
      viewBalance();
 
 }
+void Student::getFirstName()
+{
+    cout<<firstName<<endl;
+}
+
+ void Student::setnumberOfStudents(int num)
+        {
+            numberOfStudent=num;
+        }
+
+int Student::getNumberOfStudent()
+        {
+            return numberOfStudent;
+        }
 
 void Student::showInfo()
 {
@@ -70,10 +87,7 @@ void Student::showInfo()
     cout << "Your balance: " << tuitionBalance << endl;
 }
 
-static int getID()
-{
-    return Student::id;
-}
+
 
 Student::~Student()
 {
@@ -86,4 +100,10 @@ istream& operator>>(istream& is, Student& en)
     is >> en.firstName;
     is >> en.lastName;
     return is;
+}
+
+ostream& operator<<(ostream& os, const Student& en)
+{
+    os << en.firstName << " " << en.lastName << endl;
+    return os;
 }

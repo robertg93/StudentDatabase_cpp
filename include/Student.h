@@ -18,14 +18,17 @@ private:
     int gradeYear;
     string studentID;
     string courses;
-    int tuitionBalance;
+    int tuitionBalance=0;
     int costOfCourse = 600;
+    static int numberOfStudent;
 
     friend istream& operator>>(istream& is, Student& en);
+    friend ostream& operator<<(ostream& os, const Student& en);
 
     public:
         //coonstructor prompt user to enter name and year
         Student();
+        Student(string name);
         static int id;
         // generate ID
         void setStudentID();
@@ -38,7 +41,13 @@ private:
         //show status
         void showInfo();
 
-        int static getID();
+        void getFirstName();
+
+        void static setnumberOfStudents(int num);
+
+        int static getNumberOfStudent();
+
+
 
         virtual ~Student();
 
@@ -48,5 +57,6 @@ private:
 };
 
 istream& operator>>(istream& is, Student& en);
+ostream& operator<<(ostream& os, const Student& en);
 
 #endif // STUDENT_H
