@@ -1,6 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+#include "Person.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,7 +11,7 @@ using namespace std;
 
 
 
-class Student
+class Student: public Person
 {
 private:
     string firstName;
