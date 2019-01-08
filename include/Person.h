@@ -1,8 +1,12 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+
+
 using namespace std;
 
 class Person

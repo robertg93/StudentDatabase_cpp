@@ -1,8 +1,7 @@
 #ifndef WORKER_H
 #define WORKER_H
 
-#include <Person.h>
-
+#include "Person.h"
 
 class Worker : public Person
 {
