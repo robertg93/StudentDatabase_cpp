@@ -1,20 +1,29 @@
 # depslib dependency file v1.0
-1546870489 source:/home/robert/c++/StudentDatabase/main.cpp
+1546965137 source:/home/robert/c++/StudentDatabase/main.cpp
 	<iostream>
 	"Student.h"
+	"Worker.h"
 
-1546869876 source:/home/robert/c++/StudentDatabase/src/Student.cpp
+1546964137 source:/home/robert/c++/StudentDatabase/src/Student.cpp
 	"Student.h"
 
-1546872978 /home/robert/c++/StudentDatabase/include/Student.h
+1546964137 /home/robert/c++/StudentDatabase/include/Student.h
 	"Person.h"
 	<iostream>
 	<string>
 	<vector>
 	<fstream>
 
-1546872747 /home/robert/c++/StudentDatabase/include/Person.h
+1546964431 /home/robert/c++/StudentDatabase/include/Person.h
+	<string>
+	<iostream>
 
-1546871158 source:/home/robert/c++/StudentDatabase/src/Person.cpp
+1546964311 source:/home/robert/c++/StudentDatabase/src/Person.cpp
 	"Person.h"
+
+1546964624 source:/home/robert/c++/StudentDatabase/src/Worker.cpp
+	"Worker.h"
+
+1546964593 /home/robert/c++/StudentDatabase/include/Worker.h
+	<Person.h>
 

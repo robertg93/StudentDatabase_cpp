@@ -4,14 +4,10 @@
 int Student::numberOfStudent=0;
 int  Student::id = 1000;
 Student::Student(){}
-Student::Student(string name)
+Student::Student(string name):Person(name)
 {
 
 
-    this->firstName=name;
-
-    cout << "Enter student last name: " << endl;
-    cin >> this->lastName;
 
     cout << "Enter your grade year: \n 1 for freshman \n 2 for spohmore \n 3 for junior \n 4 for senior  " << endl;
     cin >> this->gradeYear;
@@ -94,7 +90,7 @@ Student::~Student()
     id--;
 }
 
-
+/*
 istream& operator>>(istream& is, Student& en)
 {
     is >> en.firstName;
@@ -106,4 +102,4 @@ ostream& operator<<(ostream& os, const Student& en)
 {
     os << en.firstName << " " << en.lastName << endl;
     return os;
-}
+}*/

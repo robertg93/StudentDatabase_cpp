@@ -14,8 +14,7 @@ using namespace std;
 class Student: public Person
 {
 private:
-    string firstName;
-    string lastName;
+
     int gradeYear;
     string studentID;
     string courses;
@@ -23,8 +22,8 @@ private:
     int costOfCourse = 600;
     static int numberOfStudent;
 
-    friend istream& operator>>(istream& is, Student& en);
-    friend ostream& operator<<(ostream& os, const Student& en);
+    //friend istream& operator>>(istream& is, Student& en);
+   // friend ostream& operator<<(ostream& os, const Student& en);
 
     public:
         //coonstructor prompt user to enter name and year
@@ -57,7 +56,7 @@ private:
     private:
 };
 
-istream& operator>>(istream& is, Student& en);
-ostream& operator<<(ostream& os, const Student& en);
+//istream& operator>>(istream& is, Student& en);
+//ostream& operator<<(ostream& os, const Student& en);
 
 #endif // STUDENT_H
