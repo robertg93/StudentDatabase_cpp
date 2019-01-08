@@ -11,6 +11,9 @@ class Worker : public Person
         Worker(string name);
         virtual ~Worker();
         void showInfo();
+        static int numberOfWorker;
+        void static setNumberOfWorker(int num);
+        int static getNumberOfWorker();
 
 
 

@@ -5,18 +5,23 @@
 using namespace std;
 vector<Student> vec;
 vector<Worker> vec2;
-void loadUserToVec();
-void loadNumberOfObjects();
-void saveNumberOfobjects();
+void loadDataFromFiles();
+void loadStudentToVec();
+void loadnumberOfStudents();
+void loadnumberOfWorekr();
+void loadWorkerTovec2();
+void savenumberOfStudents();
+void saveNumberOfWorkers();
 void createStudent();
 void createWorker();
+void showStudent();
+void showWorker();
 
 
 int main()
 {
     int option;
-    loadNumberOfObjects();
-    loadUserToVec();
+    loadDataFromFiles();
 
         do
         {
@@ -40,46 +45,23 @@ int main()
                         createWorker();
                     }
                     else cout << "you enter wrong number" << endl;
-
-
-
-
                 }
-
            else if (option == 2)
                 {
-                            cout << "Show Student \n 1 Student \n 2 worker" << endl;
-                            int choice ;
-                            cin >> choice;
-                            if (choice == 1)
-                            {
-                                cout << "\033[2J\033[1;1H";
-                                for (int i=0; i<Student::getNumberOfStudent(); i++)
-                                {
-                                    vec[i].showInfo();
-
-                                }
-
-                                cin.ignore();
-                                cin.get();
-                            }
-                            else if (choice == 2)
-                            {
-                                cout << "\033[2J\033[1;1H";
-                                for (int i=0; i<vec2.size(); i++)
-                                {
-                                    vec2[i].showInfo(); // DODAC ladowanie z pliku
-
-                                }
-
-                                cin.ignore();
-                                cin.get();
-                            }
+                    cout << "Show Student \n 1 Student \n 2 worker" << endl;
+                    int choice ;
+                    cin >> choice;
+                    if (choice == 1)
+                        {
+                            showStudent();
+                        }
+                    else if (choice == 2)
+                        {
+                            showWorker();
+                        }
                             else cout << "you enter wrong number" << endl;
-
                 }
-
-            else if (option == 3)
+           else if (option == 3)
                 {
                     cout << "\033[2J\033[1;1H";
                     cout<< "You are logged in" << endl;
@@ -112,9 +94,17 @@ int main()
 
 }
 
-void loadUserToVec()
+void loadDataFromFiles()
 {
-    ifstream in("savedUsers");
+    loadnumberOfStudents();
+    loadStudentToVec();
+    loadnumberOfWorekr();
+    loadWorkerTovec2();
+}
+
+void loadStudentToVec()
+{
+    ifstream in("savedStudents");
     int temp = Student::getNumberOfStudent();
     for ( int i = 0; i<temp ; i++)
     {
@@ -128,23 +118,51 @@ void loadUserToVec()
 
 }
 
+void loadWorkerTovec2()
+{
+    ifstream in("savedWorkers");
+    int temp = Worker::getNumberOfWorker();
+    for ( int i = 0; i<temp ; i++)
+    {
+        Worker e1;
+        in >> e1;
+        vec2.push_back(e1);
+    }
 
-void loadNumberOfObjects()
+    in.close();
+}
+
+void loadnumberOfStudents()
 {
                     int tempnum;
                     ifstream inNum;
-                    inNum.open ("numberOfObject.txt");
+                    inNum.open ("numberOfStudent.txt");
                     inNum >> tempnum;
                     Student::setnumberOfStudents(tempnum);
 }
 
-void saveNumberOfobjects()
+void loadnumberOfWorekr()
+{
+                    int tempnum;
+                    ifstream inNum;
+                    inNum.open ("numberOfWorker.txt");
+                    inNum >> tempnum;
+                    Worker::setNumberOfWorker(tempnum);
+}
+
+void savenumberOfStudents()
 {
                     ofstream outNum;
-                    outNum.open ("numberOfObject.txt");
+                    outNum.open ("numberOfStudent.txt");
                     outNum << Student::getNumberOfStudent();
 }
 
+void saveNumberOfWorkers()
+{
+                    ofstream outNum;
+                    outNum.open ("numberOfWorker.txt");
+                    outNum << Worker::getNumberOfWorker();
+}
 
 
 void createStudent()
@@ -152,17 +170,17 @@ void createStudent()
                         cout << "Enter Student name:" << endl;
                         string temp;
                         cin>>temp;
-                        Student ptr1 = Student(temp);
-                        vec.push_back(ptr1);
-                        ofstream out("savedUsers", fstream::app);
-                        out << ptr1;
+                        Student st1 = Student(temp);
+                        vec.push_back(st1);
+                        ofstream out("savedStudent", fstream::app);
+                        out << st1;
                         out.close();
-                        saveNumberOfobjects();
+                        savenumberOfStudents();
 }
 
 void createWorker()
 {
-                        cout << "Enter Student name:" << endl;
+                        cout << "Enter Worker name:" << endl;
                         string temp;
                         cin>>temp;
                         Worker wrk = Worker(temp);
@@ -170,6 +188,28 @@ void createWorker()
                         ofstream out3("savedWorkers", fstream::app);
                         out3 << wrk;
                         out3.close();
-                        //saveNumberOfobjects();
+                        saveNumberOfWorkers();
 
+}
+
+void showStudent()
+{
+    cout << "\033[2J\033[1;1H";
+                            for (int i=0; i<Student::getNumberOfStudent(); i++)
+                                {
+                                    vec[i].showInfo();
+
+                                }
+                            cin.ignore();
+                            cin.get();
+}
+void showWorker()
+{
+        cout << "\033[2J\033[1;1H";
+                            for (int i=0; i<Worker::getNumberOfWorker(); i++)
+                                {
+                                    vec2[i].showInfo();
+                                }
+                            cin.ignore();
+                            cin.get();
 }
