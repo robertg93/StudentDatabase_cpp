@@ -22,7 +22,6 @@ private:
     string courses;
     int tuitionBalance=0;
     int costOfCourse = 600;
-    static int numberOfStudent;
 
     //friend istream& operator>>(istream& is, Student& en);
    // friend ostream& operator<<(ostream& os, const Student& en);
@@ -31,6 +30,8 @@ private:
         //coonstructor prompt user to enter name and year
         Student();
         Student(string name);
+        static int numberOfStudent;
+
         static int id;
         // generate ID
         void setStudentID();

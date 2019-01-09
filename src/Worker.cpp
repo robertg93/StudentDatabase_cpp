@@ -14,7 +14,7 @@ Worker::Worker(string name): Person(name)
 
 void Worker::showInfo()
 {
-    cout << "Name: " << firstName << " " << lastName << endl;
+    cout << firstName << " " << lastName << endl;
     //cout << "Courses endrolled" << courses << endl;
     //cout << "Your balance: " << tuitionBalance << endl;
 }

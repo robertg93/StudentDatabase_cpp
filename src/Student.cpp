@@ -78,9 +78,9 @@ int Student::getNumberOfStudent()
 
 void Student::showInfo()
 {
-    cout << "Name: " << firstName << " " << lastName << endl;
-    cout << "Courses endrolled" << courses << endl;
-    cout << "Your balance: " << tuitionBalance << endl;
+    cout <<  firstName << " " << lastName << endl;
+    //cout << "Courses endrolled" << courses << endl;
+    //cout << "Your balance: " << tuitionBalance << endl;
 }
 
 

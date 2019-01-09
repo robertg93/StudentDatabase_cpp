@@ -21,34 +21,11 @@ int main()
 
             if (option == 1)
                 {
-
-                    cout << "Who you want to create? \n 1 Student \n 2 worker" << endl;
-                    int choice ;
-                    cin >> choice;
-                    if (choice == 1)
-                    {
-                        createStudent();
-                    }
-                    else if (choice == 2)
-                    {
-                        createWorker();
-                    }
-                    else cout << "you enter wrong number" << endl;
+                    createUser();
                 }
            else if (option == 2)
                 {
-                    cout << "Show Student \n 1 Student \n 2 worker" << endl;
-                    int choice ;
-                    cin >> choice;
-                    if (choice == 1)
-                        {
-                            showStudent();
-                        }
-                    else if (choice == 2)
-                        {
-                            showWorker();
-                        }
-                            else cout << "you enter wrong number" << endl;
+                    showUser();
                 }
            else if (option == 3)
                 {
@@ -61,11 +38,7 @@ int main()
 
            else if (option == 4)
                 {
-                    cout << "\033[2J\033[1;1H";
-                    cout<< "User was deleted" << endl;
-
-                    cin.ignore();
-                    cin.get();
+                    deleteUser();
                 }
             else if (option == 0 ) continue;
             else
@@ -78,6 +51,9 @@ int main()
         }
 
     while(option != 0);
+
+    saveStudentToVec();
+    saveWorkerToVec();
 
     return 0;
 
