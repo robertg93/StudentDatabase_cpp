@@ -23,17 +23,22 @@ private:
     int tuitionBalance=0;
     int costOfCourse = 600;
 
-    //friend istream& operator>>(istream& is, Student& en);
-   // friend ostream& operator<<(ostream& os, const Student& en);
-
     public:
         //coonstructor prompt user to enter name and year
         Student();
         Student(string name);
+        Student(const Student&) = default;
         static int numberOfStudent;
+
+
 
         static int id;
         // generate ID
+        //static void createStudent();
+
+
+
+
         void setStudentID();
         //enroll coureses
         void enroll();
@@ -42,9 +47,9 @@ private:
         //pay tutition
         void payTuition(int payment);
         //show status
-        void showInfo();
+        void showInfo() override;
 
-        void getFirstName();
+        void getFirstName() const;
 
         void static setnumberOfStudents(int num);
 
@@ -59,7 +64,5 @@ private:
     private:
 };
 
-//istream& operator>>(istream& is, Student& en);
-//ostream& operator<<(ostream& os, const Student& en);
 
 #endif // STUDENT_H

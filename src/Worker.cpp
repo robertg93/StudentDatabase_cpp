@@ -3,10 +3,7 @@
 int Worker::numberOfWorker=0;
 
 
-Worker::Worker()
-{
-    //ctor
-}
+
 Worker::Worker(string name): Person(name)
 {
     numberOfWorker++;

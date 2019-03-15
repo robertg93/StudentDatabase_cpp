@@ -1,40 +1,66 @@
-#ifndef FUNCTION_H_INCLUDED
-#define FUNCTION_H_INCLUDED
+#include "Menu.h"
+//#include "function.h"
+using namespace std;
+Menu::Menu()
+{
+    //ctor
+}
 
-#include "Person.h"
-#include "Student.h"
-#include "Worker.h"
-
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-
-
-vector<Student> vec;
-vector<Worker> vec2;
-
-void loadDataFromFiles();
-void loadStudentToVec();
-void loadnumberOfStudents();
-void loadnumberOfWorekr();
-void loadWorkerTovec2();
-void saveStudentToVec();
-void saveWorkerToVec();
-void savenumberOfStudents();
-void saveNumberOfWorkers();
-void createUser();
-void createStudent();
-void createWorker();
-void showUser();
-void showStudent();
-void showWorker();
-void deleteUser();
-void deleteStudent();
-void deleteWorker();
+Menu::~Menu()
+{
+    //dtor
+}
 
 
-void loadDataFromFiles()
+void Menu::runMenu()
+{
+    int option;
+    loadDataFromFiles();
+
+    do
+        {
+        cout << "\033[2J\033[1;1H";
+        cout << "Enter the number to selcet ption: \n 1 Create new user \n 2 show users \n 3 Log in \n 4 delete user \n 0 Exit " << endl;
+
+        cin >> option;
+
+            if (option == 1)
+                {
+                    createUser();
+                }
+           else if (option == 2)
+                {
+                    showUser();
+                }
+           else if (option == 3)
+                {
+                    cout << "\033[2J\033[1;1H";
+                    cout<< "You are logged in" << endl;
+
+                    cin.ignore();
+                    cin.get();
+                }
+
+           else if (option == 4)
+                {
+                    deleteUser();
+                }
+            else if (option == 0 ) continue;
+            else
+            {
+                cout << "you enter wrong number press ENTER to try again" << endl;
+                cin.ignore();
+                cin.get();
+            }
+
+        }
+        while(option != 0);
+
+    saveStudentToVec();
+    saveWorkerToVec();
+}
+
+void Menu::loadDataFromFiles()
 {
     loadnumberOfStudents();
     loadStudentToVec();
@@ -42,7 +68,7 @@ void loadDataFromFiles()
     loadWorkerTovec2();
 }
 
-void loadStudentToVec()
+void Menu::loadStudentToVec()
 {
     ifstream in("savedStudent");
     int temp = Student::getNumberOfStudent();
@@ -50,7 +76,7 @@ void loadStudentToVec()
     {
         Student e1;
         in >> e1;
-        vec.push_back(e1);
+        Menu::vec.push_back(e1);
     }
 
     in.close();
@@ -58,7 +84,7 @@ void loadStudentToVec()
 
 }
 
-void loadWorkerTovec2()
+void Menu::loadWorkerTovec2()
 {
     ifstream in("savedWorkers");
     int temp = Worker::getNumberOfWorker();
@@ -66,13 +92,13 @@ void loadWorkerTovec2()
     {
         Worker e1;
         in >> e1;
-        vec2.push_back(e1);
+        Menu::vec2.push_back(e1);
     }
 
     in.close();
 }
 
-void loadnumberOfStudents()
+void Menu::loadnumberOfStudents()
 {
                     int tempnum;
                     ifstream inNum;
@@ -81,7 +107,7 @@ void loadnumberOfStudents()
                     Student::setnumberOfStudents(tempnum);
 }
 
-void loadnumberOfWorekr()
+void Menu::loadnumberOfWorekr()
 {
                     int tempnum;
                     ifstream inNum;
@@ -90,21 +116,21 @@ void loadnumberOfWorekr()
                     Worker::setNumberOfWorker(tempnum);
 }
 
-void savenumberOfStudents()
+void Menu::savenumberOfStudents()
 {
                     ofstream outNum;
                     outNum.open ("numberOfStudent.txt");
                     outNum << Student::getNumberOfStudent();
 }
 
-void saveNumberOfWorkers()
+void Menu::saveNumberOfWorkers()
 {
                     ofstream outNum;
                     outNum.open ("numberOfWorker.txt");
                     outNum << Worker::getNumberOfWorker();
 }
 
-void createUser()
+void Menu::createUser()
 {
                     cout << "Who you want to create? \n 1 Student \n 2 worker" << endl;
                     int choice ;
@@ -120,26 +146,26 @@ void createUser()
                     else cout << "you enter wrong number" << endl;
 }
 
-void createStudent()
+void Menu::createStudent()
 {
                         cout << "Enter Student name:" << endl;
                         string temp;
                         cin>>temp;
-                        Student st1 = Student(temp);
-                        vec.push_back(st1);
+                        //Student st1 = Student(temp);
+                        Menu::vec.push_back(Student(temp));
 }
 
-void createWorker()
+void Menu::createWorker()
 {
                         cout << "Enter Worker name:" << endl;
                         string temp;
                         cin>>temp;
                         Worker wrk = Worker(temp);
-                        vec2.push_back(wrk);
+                        Menu::vec2.push_back(wrk);
 
 }
 
-void showUser()
+void Menu::showUser()
 {
                     cout << "Show Student \n 1 Student \n 2 worker" << endl;
                     int choice ;
@@ -155,33 +181,33 @@ void showUser()
                             else cout << "you enter wrong number" << endl;
 }
 
-void showStudent()
+void Menu::showStudent()
 {
     cout << "\033[2J\033[1;1H";
                             for (int i=0; i<Student::getNumberOfStudent(); i++)
                                 {
                                     cout << i+1<<" ";
-                                    vec[i].showInfo();
+                                    Menu::vec[i].showInfo();
 
                                 }
                             cout<< "Press Enter" << endl;
                             cin.ignore();
                             cin.get();
 }
-void showWorker()
+void Menu::showWorker()
 {
         cout << "\033[2J\033[1;1H";
                             for (int i=0; i<Worker::getNumberOfWorker(); i++)
                                 {
                                     cout << i+1<<" ";
-                                    vec2[i].showInfo();
+                                    Menu::vec2[i].showInfo();
                                 }
                             cout<< "Press Enter" << endl;
                             cin.ignore();
                             cin.get();
 }
 
-void deleteUser()
+void Menu::deleteUser()
 {
                     cout << "\033[2J\033[1;1H";
                     cout<< "Witch user you want do delete: \n 1 Student \n 2 Worker" << endl;
@@ -202,7 +228,7 @@ void deleteUser()
 
 }
 
-void deleteStudent()
+void Menu::deleteStudent()
 {
                     cout << "\033[2J\033[1;1H";
                     cout<< "Witch Student you want do delete?" << endl;
@@ -210,11 +236,11 @@ void deleteStudent()
                     showStudent();
                     cout<< "Enter number" << endl;
                     cin >> choice;
-                    vec.erase(vec.begin() + choice-1);
+                    Menu::vec.erase(Menu::vec.begin() + choice-1);
                     Student::numberOfStudent--;
 }
 
-void deleteWorker()
+void Menu::deleteWorker()
 {
                     cout << "\033[2J\033[1;1H";
                     cout<< "Witch Worker you want do delete?" << endl;
@@ -222,13 +248,13 @@ void deleteWorker()
                     cout<< "Enter number" << endl;
                     int choice ;
                     cin >> choice;
-                    vec2.erase(vec2.begin() + choice-1);
+                    Menu::vec2.erase(Menu::vec2.begin() + choice-1);
                     Worker::numberOfWorker--;
 }
 
-void saveStudentToVec()
+void Menu::saveStudentToVec()
 {
-    for (int i =0; i< vec.size(); i++)
+    for (int i =0; i< Menu::vec.size(); i++)
     {
                         ofstream out("savedStudent", fstream::app);
                         out << vec[i];
@@ -238,18 +264,14 @@ void saveStudentToVec()
 
 }
 
-void saveWorkerToVec()
+void Menu::saveWorkerToVec()
 {
-    for (int i =0; i< vec2.size(); i++)
+    for (int i =0; i< Menu::vec2.size(); i++)
     {
                         ofstream out("savedWorkers", fstream::app);
-                        out << vec2[i];
+                        out << Menu::vec2[i];
                         out.close();
                         saveNumberOfWorkers();
     }
 
 }
-
-
-
-#endif // FUNCTION_H_INCLUDED

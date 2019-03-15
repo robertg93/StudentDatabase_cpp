@@ -17,9 +17,8 @@ Person::Person(string name):firstName(name)
 
 Person::~Person()
 {
-    //dtor
+    //cout << "dtor" << endl;
 }
-
 void Person::showInfo(){}
 
 

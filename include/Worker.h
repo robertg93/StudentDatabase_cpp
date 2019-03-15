@@ -10,10 +10,10 @@
 class Worker : public Person
 {
     public:
-        Worker();
+        Worker()=default;
         Worker(string name);
         ~Worker();
-        void showInfo();
+        void showInfo() override;
         static int numberOfWorker;
         void static setNumberOfWorker(int num);
         int static getNumberOfWorker();

@@ -1,5 +1,5 @@
 #include "Student.h"
-
+#include "Menu.h"
 
 int Student::numberOfStudent=0;
 int  Student::id = 1000;
@@ -21,6 +21,8 @@ Student::Student(string name):Person(name)
     numberOfStudent++;
     id++;
 }
+
+
 
 void Student::setStudentID()
 {
@@ -61,7 +63,7 @@ void Student::payTuition(int payment)
      viewBalance();
 
 }
-void Student::getFirstName()
+void Student::getFirstName() const
 {
     cout<<firstName<<endl;
 }
